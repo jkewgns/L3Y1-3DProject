@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da425fbdf8c4a6646b7e538a069ede65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardAccel: 5
+  forwardAccel: 12
   reverseAccel: 2
-  maxSpeed: 40
+  maxSpeed: 100
   turnStrength: 100
   jumpHeight: 0
   gravityForce: 10
@@ -17388,7 +17388,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 983
+  m_VersionIndex: 989
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
