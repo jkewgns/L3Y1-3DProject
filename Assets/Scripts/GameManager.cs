@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameTimer();
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     
     void GameTimer()
