@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 1013153228870580817}
   - component: {fileID: 2468661958941125718}
   - component: {fileID: 2404330937065991299}
+  - component: {fileID: 5112163461042529715}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Player
@@ -439,6 +440,18 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2404330937065991299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013818162744530464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e33cda37d56d74a86cf46e82acfa97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5112163461042529715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1024,7 +1037,7 @@ GameObject:
   - component: {fileID: 3936189477250311326}
   m_Layer: 0
   m_Name: PlayerContainer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17401,7 +17414,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 995
+  m_VersionIndex: 986
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
