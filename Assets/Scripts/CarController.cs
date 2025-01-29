@@ -8,13 +8,13 @@ public class CarController : MonoBehaviour
     private Rigidbody theRB; // this is the RigidBody that control everything. Do not touch.
 
     [Header("Car Attributes")]
-    [Range(0,20f)] public float forwardAccel = 8f; 
-    [Range(0,20f)] public float reverseAccel = 4f;
-    [Range(0,100f)] public float maxSpeed = 50f;
-    [Range(0,360f)] public float turnStrength = 180f;
-    [Range(0,60f)] public float jumpHeight = 30f;
-    [Range(0,20f)] public float gravityForce = 10f;
-    [Range(0,5f)] public float dragOnGround = 3f;
+    [Range(0, 20f)] public float forwardAccel = 8f;
+    [Range(0, 20f)] public float reverseAccel = 4f;
+    [Range(0, 100f)] public float maxSpeed = 50f;
+    [Range(0, 360f)] public float turnStrength = 180f;
+    [Range(0, 60f)] public float jumpHeight = 30f;
+    [Range(0, 20f)] public float gravityForce = 10f;
+    [Range(0, 5f)] public float dragOnGround = 3f;
     private float speedInput, turnInput;
 
     [Header("Ground Check")]
@@ -26,7 +26,7 @@ public class CarController : MonoBehaviour
     [Header("Wheels")]
     public float maxWheelTurn = 25f;
     public Transform leftFrontWheel, rightFrontWheel;
-    
+
 
     [Header("Particles")]
     public bool useParticles;
@@ -55,11 +55,11 @@ public class CarController : MonoBehaviour
     {
 
         speedInput = 0f;
-        if (Input.GetAxis("Vertical") > 0) 
+        if (Input.GetAxis("Vertical") > 0)
         {
             speedInput = Input.GetAxis("Vertical") * forwardAccel * 1000f;
         }
-        else if (Input.GetAxis("Vertical") < 0) 
+        else if (Input.GetAxis("Vertical") < 0)
         {
             speedInput = Input.GetAxis("Vertical") * reverseAccel * 1000f;
         }
@@ -67,7 +67,7 @@ public class CarController : MonoBehaviour
         turnInput = Input.GetAxis("Horizontal");
         if (grounded)
         {
-            transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Input.GetAxis("Vertical"), 0f));
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Input.GetAxis("Vertical"), 0f));
         }
 
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
@@ -91,25 +91,26 @@ public class CarController : MonoBehaviour
         emissionRate = 0;
 
 
-        if (grounded){
+        if (grounded)
+        {
             theRB.drag = dragOnGround;
 
-            if (Mathf.Abs(speedInput) > 0) 
+            if (Mathf.Abs(speedInput) > 0)
             {
                 theRB.AddForce(transform.forward * speedInput);
 
                 emissionRate = maxEmissionValue;
             }
         }
-        else 
+        else
         {
             theRB.drag = 0.1f;
             theRB.AddForce(Vector3.up * -gravityForce * 100f);
         }
 
-        if(useParticles)
+        if (useParticles)
         {
-            foreach(ParticleSystem part in dustTrail)
+            foreach (ParticleSystem part in dustTrail)
             {
                 var emissionModule = part.emission;
                 emissionModule.rateOverTime = emissionRate;

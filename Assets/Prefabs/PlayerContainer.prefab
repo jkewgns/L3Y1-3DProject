@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9072771594049816817}
   m_Layer: 9
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,8 +317,7 @@ GameObject:
   - component: {fileID: 5647856213033286581}
   - component: {fileID: 1013153228870580817}
   - component: {fileID: 2468661958941125718}
-  - component: {fileID: 2404330937065991299}
-  - component: {fileID: 5112163461042529715}
+  - component: {fileID: 3782097916682803059}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Player
@@ -439,19 +438,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2404330937065991299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3013818162744530464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e33cda37d56d74a86cf46e82acfa97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5112163461042529715
+--- !u!114 &3782097916682803059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -739,7 +726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00077629, y: -477.9452}
+  m_AnchoredPosition: {x: 0, y: -477.9452}
   m_SizeDelta: {x: 242.11, y: 35.7775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6077047864474919494
@@ -17414,7 +17401,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1004
+  m_VersionIndex: 1034
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
