@@ -9,11 +9,15 @@ public class Exit : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
+    public AudioSource checkpointSound;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            checkpointSound.pitch = 2;
+            checkpointSound.Play();
+
             LoadNextLevel();
         }
     }

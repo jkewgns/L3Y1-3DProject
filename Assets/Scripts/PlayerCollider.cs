@@ -6,6 +6,8 @@ public class PlayerCollider : MonoBehaviour
 {
     Vector3 lastPos;
 
+    public AudioSource checkpointSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerCollider : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             lastPos = transform.position;
+            checkpointSound.Play();
         }
     }
 }
