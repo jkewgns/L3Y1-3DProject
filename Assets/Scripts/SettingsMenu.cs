@@ -6,12 +6,20 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
+    SaveSettings saveSettings;
 
     public AudioMixer audioMixer;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
+
+    void Awake()
+    {
+        saveSettings = GameObject.Find("Settings").GetComponent<SaveSettings>();
+    }
 
     void Start()
     {
@@ -38,15 +46,22 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    void Update()
+    {
+        saveSettings.musicVolume = musicVolumeSlider.value;
+        saveSettings.sfxVolume = sfxVolumeSlider.value;
+    }
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume()
     {
-        audioMixer.SetFloat("volume", volume);
+        // audioMixer.SetFloat("volume", volume);
+        saveSettings.globalVolume = gameObject.GetComponent<Slider>().value;
     }
 
     public void SetQuality (int qualityIndex)
